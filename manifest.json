@@ -1,0 +1,14 @@
+{
+  "name": "NOVA",
+  "description": "My first Chrome App.",
+  "version": "0.1",
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": ["http://localhost:9999/","default-src "],
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": { "16": "/static/res/botim.jpg", "128": "/static/res/botim.jpg" }
+}
