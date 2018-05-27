@@ -1,11 +1,37 @@
+var UserDictation = artyom.newDictation({
+    continuous:true, // Enable continuous if HTTPS connection
+    onResult:function(text){
+      output(text);
+        console.log(text);
+    },
+    onStart:function(){
+        console.log("starting");
+    },
+    onEnd:function(){
+        console.log("Dictation stopped by the user");
+        //  UserDictation.start();
+    }
+});
+
+artyom.initialize({
+  lang:"in-HI",// A lot of languages are supported. Read the docs !
+  continuous:false,// Artyom will listen forever
+  listen:false, // Start recognizing
+  soundex: true,// Use the soundex algorithm to increase accuracy
+  debug:true, // Show everything in the console
+  speed:1 // talk normally
+})
+ UserDictation.start();
+artyom.detectErrors();
+
 var $messages = $('.messages-content'), //copying messages
-    d, h, m,
+    d, h, m,text,msg,
     i = 0;
 
 $(window).load(function() {
   $messages.mCustomScrollbar();
   setTimeout(function() {
-    //fakeMessage();
+
   }, 100);
 });
 
@@ -24,8 +50,15 @@ function setDate(){
   }
 }
 
-function insertMessage() {
-  msg = $('.message-input').val();
+function output(text){
+  UserDictation.stop();
+  msg = text;
+  insertMessage(true);}
+
+function insertMessage(stt) {
+  if (stt == false){
+    msg = $('.message-input').val();
+  }
   if ($.trim(msg) == '') {
     return false;
   }
@@ -40,12 +73,12 @@ function insertMessage() {
 }
 
 $('.message-submit').click(function() {
-  insertMessage();
+  insertMessage(false);
 });
 
 $(window).on('keydown', function(e) {
   if (e.which == 13) {
-    insertMessage();
+    insertMessage(false);
     return false;
   }
 })
@@ -64,56 +97,9 @@ function interact(message){
     $('<div class="message new"><figure class="avatar"><img src="/static/res/botim.jpg" /></figure>' + reply['text'] + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
     updateScrollbar();
-
+    artyom.say(reply['text']);
+    UserDictation.start();
 		}).fail(function() {
 				alert('error calling function');
 				});
-}
-
-
-
-
-
-
-
-
-
-
-
-
-function fakeMessage() {
-  if ($('.message-input').val() != '') {
-    return false;
-  }
-  $('<div class="message loading new"><figure class="avatar"><img src="images/bgd.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
-  updateScrollbar();
-  url="http://localhost:9999/test?q="+msg;
-  loadDoc(url,hit);
-}
-
-function loadDoc(url, cFunction) {
-  var xhttp;
-  xhttp=new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      cFunction(this);
-    }
- };
-  xhttp.open("GET", url, true);
-  xhttp.send();
-}
-
-function hit(xhttp) {
-  test =xhttp.responseText;
-  postcheck(test);
-}
-
-function postcheck(test){
-  setTimeout(function() {
-    $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="images/bgd.jpg" /></figure>' + test + '</div>').appendTo($('.mCSB_container')).addClass('new');
-    setDate();
-    updateScrollbar();
-    i++;
-  }, 1000 + (Math.random() * 20) * 100);
 }

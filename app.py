@@ -1,12 +1,7 @@
 import aiml
 import sys
-import pyttsx
 from flask import Flask,request, render_template
 from flask import jsonify
-
-engine = pyttsx.init()
-voice="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0"
-engine.setProperty('voice', voice)
 
 kern = aiml.Kernel()
 kern._addSession("athuldevin")
@@ -48,8 +43,6 @@ def reply():
     print user
     print out
 
-    engine.say(out)
-    engine.runAndWait()
     return jsonify( { 'text':out})
 
 @app.route("/")
@@ -58,8 +51,3 @@ def index():
 
 if __name__ == "__main__":
     app.run(host='localhost', port=9999)
-"""
-with open("info.txt", "w") as f:
-        f.write(user)
-        f.close()
-"""
