@@ -58,3 +58,8 @@ def index():
 
 if __name__ == "__main__":
     app.run(host='localhost', port=9999)
+"""
+with open("info.txt", "w") as f:
+        f.write(user)
+        f.close()
+"""
