@@ -23,7 +23,7 @@
     }
 
     var artyomProperties = {
-        lang: 'en-GB',
+        lang: 'en-US',
         recognizing: false,
         continuous: false,
         speed: 1,

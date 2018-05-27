@@ -1,4 +1,4 @@
-is a personal project by athuldevin done by referencing many other small projects,
+is a personal project by athuldevin done by referencing many other small projects, thanks for open source community. 
 
 it is a aiml based chat bot and have flask based user interface for python 2.7
 
@@ -10,6 +10,4 @@ pip install -r requirements.txt
 then run app.py
 
 note
-the program is written for windows speech synthesizing
-you can replace your speech token in app.py based on your windows version
-if you don't want speech synthesizing and it cause errors remove the codes related to it  
+the program is written for speech synthesizing and recognition in chrome browser version 59+ (currently available only in chrome )

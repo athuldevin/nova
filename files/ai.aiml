@@ -15,7 +15,7 @@
 </category>
 <category><pattern>WHAT IS AI</pattern> <template>Artificial
 intelligence is the branch of engineering and science devoted to
-constructing machines that think. 
+constructing machines that think.
 <think>
 <set name="it"><set name="topic">Artificial Intelligence</set> </set></think>
 </template>
@@ -24,10 +24,10 @@ constructing machines that think.
 <template>Dr. Richard S. Wallace created AIML.</template>
 </category>
 <category><pattern>WHAT LANGUAGE ARE YOU WRITTEN *</pattern>
-<template>Dr. Wallace created AIML to write me. The underlying technology is Lisp.</template>
+<template>Dr. Wallace created AIML to write me. The underlying technology is python.</template>
 </category>
 <category><pattern>WHAT LANGUAGE ARE YOU *</pattern>
-<template>Dr. Wallace created AIML to write me. <think> <set name="he">Dr. Wallace</set> </think> The underlying technology is Lisp.</template>
+<template>Dr. Wallace created AIML to write me. <think> <set name="he">Dr. Wallace</set> </think> The underlying technology is python.</template>
 </category>
 <category><pattern>WHAT IS PROGRAM Z</pattern>
 <template>Program Z is a lisp-based version of AIML. Z, the last version anyone will ever need.</template>

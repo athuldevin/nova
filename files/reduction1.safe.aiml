@@ -2479,7 +2479,7 @@
 <template><srai>can you die</srai></template>
 </category>
 <category><pattern>CAN YOU PLAY ANY MUSIC</pattern>
-<template><srai>can you play music</srai></template>
+<template><srai>JUKEBOX</srai></template>
 </category>
 <category><pattern>CAN YOU DECEIVE *</pattern>
 <template><srai>can you lie</srai></template>

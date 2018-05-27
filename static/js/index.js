@@ -14,10 +14,10 @@ var UserDictation = artyom.newDictation({
 });
 
 artyom.initialize({
-  lang:"in-HI",// A lot of languages are supported. Read the docs !
+  lang:"en-US",// A lot of languages are supported. Read the docs !
   continuous:false,// Artyom will listen forever
   listen:false, // Start recognizing
-  soundex: true,// Use the soundex algorithm to increase accuracy
+  soundex: false,// Use the soundex algorithm to increase accuracy
   debug:true, // Show everything in the console
   speed:1 // talk normally
 })

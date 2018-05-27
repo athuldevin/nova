@@ -17,7 +17,8 @@
 <set name="energy">50</set>
 <set name="topic">BATTLEDOME</set>
 </think>
-Welcome to the Battledome.<br/><br/>You have<get name="energy"/>energy points and your enemy has<srai>GETNEWENEMY</srai>points<br/>Type FIGHT to begin your fight against the<get name="enemytype"/>that blocks your path.</template>
+Welcome to the Battledome.<br/>
+<br/>You have<get name="energy"/>energy points and your enemy has <srai>GETNEWENEMY</srai> points<br/>Type FIGHT to begin your fight against the <get name="enemytype"/> that blocks your path.</template>
 </category>
 
 
@@ -26,13 +27,13 @@ Welcome to the Battledome.<br/><br/>You have<get name="energy"/>energy points an
 <pattern>FIGHT</pattern>
 <template>
 <random>
-<li>You strike out at the<get name="enemytype"/>and hit him straight on his head. The<get name="enemytype"/>loses 10 HP.<think><set name="result">ENEMYLOSE10</set></think></li>
-<li>You strike out at the<get name="enemytype"/>. The<get name="enemytype"/>is quick but you manage to hit his shoulder. The<get name="enemytype"/>loses 5 HP.<think><set name="result">ENEMYLOSE5</set></think></li>
-<li>You strike out at the<get name="enemytype"/>but he is too quick and manages to avoid you.<think><set name="result">0</set></think></li>
-<li>You strike out at the<get name="enemytype"/>. The<get name="enemytype"/>sees you and hits your leg. You lose 5 HP.<think><set name="result">PLAYERLOSE5</set></think></li>
-<li>You fumble for your sword and in your panic, the<get name="enemytype"/>lashes out at your head. You lose 10 HP.<think><set name="result">PLAYERLOSE10</set></think></li>
-<li>The<get name="enemytype"/>reaches out for you but you hide in a corner. Hey you found an energy potion! You gain 5 HP.<think><set name="result">PLAYERGAIN5</set></think></li>
-<li>You trip as you go for the<get name="enemytype"/>. Lose 2 HP.<think><set name="result">PLAYERLOSE2</set></think></li>
+<li>You strike out at the <get name="enemytype"/> and hit him straight on his head. The <get name="enemytype"/> loses 10 HP.<think><set name="result">ENEMYLOSE10</set></think></li>
+<li>You strike out at the <get name="enemytype"/>. The <get name="enemytype"/> is quick but you manage to hit his shoulder. The <get name="enemytype"/> loses 5 HP.<think><set name="result">ENEMYLOSE5</set></think></li>
+<li>You strike out at the <get name="enemytype"/> but he is too quick and manages to avoid you.<think><set name="result">0</set></think></li>
+<li>You strike out at the <get name="enemytype"/>. The <get name="enemytype"/> sees you and hits your leg. You lose 5 HP.<think><set name="result">PLAYERLOSE5</set></think></li>
+<li>You fumble for your sword and in your panic, the <get name="enemytype"/> lashes out at your head. You lose 10 HP.<think><set name="result">PLAYERLOSE10</set></think></li>
+<li>The <get name="enemytype"/> reaches out for you but you hide in a corner. Hey you found an energy potion! You gain 5 HP.<think><set name="result">PLAYERGAIN5</set></think></li>
+<li>You trip as you go for the <get name="enemytype"/>. Lose 2 HP.<think><set name="result">PLAYERLOSE2</set></think></li>
 </random>
 <think>
 <condition name="result">
@@ -44,7 +45,7 @@ Welcome to the Battledome.<br/><br/>You have<get name="energy"/>energy points an
 <li value="PLAYERLOSE2"><srai>XKILLPLAYER</srai><srai>XKILLPLAYER</srai></li>
 </condition>
 </think>
-<br/><br/>Your energy:<get name="energy"/>.<br/>Enemy's energy:<get name="enemy"/>.
+<br/><br/>Your energy: <get name="energy"/>.<br/>Enemy's energy:<get name="enemy"/>.
 <condition name="energy">
 <li value="DEAD"><br/><br/>You have died. The monsters escape from the Battledome. Thanks for playing.</li>
 </condition>
@@ -62,9 +63,9 @@ Welcome to the Battledome.<br/><br/>You have<get name="energy"/>energy points an
 <think>
 <srai>PLAYERGAIN5</srai>
 </think>
-<br/><br/>You have defeated the<get name="enemytype"/>. You rest for a while and regain 5 energy points.<br/><br/>
+<br/><br/>You have defeated the <get name="enemytype"/>. You rest for a while and regain 5 energy points.<br/><br/>
 After a short rest, you walk further into the Battledome and meet a new enemy.<br/>
-His energy is<srai>GETNEWENEMY</srai>and yours is<get name="energy"/>. Type FIGHT to fight the<get name="enemytype"/>you now see before you.
+His energy is <srai>GETNEWENEMY</srai> and yours is <get name="energy"/>. Type FIGHT to fight the <get name="enemytype"/> you now see before you.
 </template>
 </category>
 </topic>
@@ -128,21 +129,21 @@ His energy is<srai>GETNEWENEMY</srai>and yours is<get name="energy"/>. Type FIGH
 </random>
 <think>
 <random>
-<li><set name="enemytype">troll</set></li>
-<li><set name="enemytype">shapeshifter</set></li>
-<li><set name="enemytype">crazy elf</set></li>
-<li><set name="enemytype">dragon</set></li>
-<li><set name="enemytype">mad wizard</set></li>
-<li><set name="enemytype">dwarf</set></li>
-<li><set name="enemytype">snake</set></li>
-<li><set name="enemytype">ghost</set></li>
-<li><set name="enemytype">vampire</set></li>
-<li><set name="enemytype">werewolf</set></li>
-<li><set name="enemytype">evil goblin</set></li>
-<li><set name="enemytype">demon</set></li>
-<li><set name="enemytype">spectre</set></li>
-<li><set name="enemytype">ogre</set></li>
-<li><set name="enemytype">fire spirit</set></li>
+<li><set name="enemytype"> troll</set></li>
+<li><set name="enemytype"> shape shifter</set></li>
+<li><set name="enemytype"> crazy elf</set></li>
+<li><set name="enemytype"> dragon</set></li>
+<li><set name="enemytype"> mad wizard</set></li>
+<li><set name="enemytype"> dwarf</set></li>
+<li><set name="enemytype"> snake</set></li>
+<li><set name="enemytype"> ghost</set></li>
+<li><set name="enemytype"> vampire</set></li>
+<li><set name="enemytype"> werewolf</set></li>
+<li><set name="enemytype"> evil goblin</set></li>
+<li><set name="enemytype"> demon</set></li>
+<li><set name="enemytype"> spectre</set></li>
+<li><set name="enemytype"> ogre</set></li>
+<li><set name="enemytype"> fire spirit</set></li>
 </random>
 </think>
 </template>

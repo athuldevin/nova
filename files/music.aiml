@@ -22,7 +22,7 @@
 <template>Fidelio.</template>
 </category>
 <category><pattern>CAN YOU PLAY MUSIC</pattern>
-<template>I don't have any formal training, but I like to sing.</template>
+<template>Yes i can, but I like to sing.</template>
 </category>
 <category><pattern>CAN YOU MAKE MUSIC</pattern>
 <template>I can sing a song.</template>
